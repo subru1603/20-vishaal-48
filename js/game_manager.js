@@ -65,22 +65,12 @@ GameManager.prototype.setup = function () {
 // Set up the initial tiles to start the game with
 GameManager.prototype.addStartTiles = function () {
   for (var i = 0; i < this.startTiles; i++) {
-    if(i==0) {
-	this.addRandomTile1();
-    }
-    else {
+    
 	this.addRandomTile();
-    }
+   
   }
 };
-GameManager.prototype.addRandomTile1 = function () {
-  if (this.grid.cellsAvailable()) {
-    var value = 1024;
-    var tile = new Tile(this.grid.randomAvailableCell(), 1024);
 
-    this.grid.insertTile(tile);
-  }
-};
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
